@@ -51,7 +51,7 @@ The table below lists leading commercial SaaS platforms evaluated by valuation/r
 
 ## 🔓 Open-Source GitHub Projects
 
-Below is a curated collection of top open-source threat detection, CSPM, runtime monitoring, eBPF, and cloud forensic tools sorted by **GitHub Star Count (descending)** 🌟:
+Below is a curated collection of top open-source threat detection, CSPM, runtime monitoring, eBPF, and cloud forensic tools sorted by **GitHub Stars_Count (descending)** 🌟:
 
 - [![Trivy Stars](https://img.shields.io/github/stars/aquasecurity/trivy?style=social&color=white)](https://github.com/aquasecurity/trivy/stargazers) **[Trivy](https://github.com/aquasecurity/trivy)** 🛡️ — Comprehensive and versatile security scanner for container images, file systems, Git repositories, Kubernetes clusters, and IaC templates.
 - [![Prowler Stars](https://img.shields.io/github/stars/prowler-cloud/prowler?style=social&color=white)](https://github.com/prowler-cloud/prowler/stargazers) **[Prowler](https://github.com/prowler-cloud/prowler)** ⚡ — De facto open-source CSPM scanner with 300+ security checks across AWS, Azure, GCP, and Kubernetes following CIS, NIST, and ISO standards.
