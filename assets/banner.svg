@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#07172f"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </linearGradient>
+
+    <!-- Glowing Cyber Grids -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="1" opacity="0.4"/>
+    </pattern>
+
+    <!-- Linear Gradient for Accents -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <linearGradient id="neonShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#7928ca"/>
+      <stop offset="100%" stop-color="#ff0080"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      fill: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      fill: #94a3b8;
+    }
+    .badge-text {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #00f2fe;
+    }
+    
+    /* Dynamic / Animated elements */
+    @keyframes pulse {
+      0% { opacity: 0.3; transform: scale(0.98); }
+      50% { opacity: 0.8; transform: scale(1.02); }
+      100% { opacity: 0.3; transform: scale(0.98); }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -40; }
+    }
+    .animated-ring {
+      animation: pulse 4s infinite ease-in-out;
+      transform-origin: 1050px 180px;
+    }
+    .flowing-path {
+      stroke-dasharray: 10, 10;
+      animation: dash 2s linear infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="360" rx="16" fill="url(#bgGrad)"/>
+  <rect width="1200" height="360" rx="16" fill="url(#grid)"/>
+
+  <!-- Dynamic Glowing Background Orbs (Kept behind text) -->
+  <circle cx="150" cy="80" r="180" fill="#00f2fe" opacity="0.05" filter="url(#glow)"/>
+  <circle cx="1050" cy="180" r="220" fill="#7928ca" opacity="0.08" filter="url(#glow)"/>
+
+  <!-- Dynamic Animated Graphic Elements on the Right Side (Non-obstructive) -->
+  <g transform="translate(820, 40)">
+    <!-- Threat Graph Nodes -->
+    <path d="M 50 140 L 140 60 L 230 140 L 140 220 Z" fill="none" stroke="#334155" stroke-width="2"/>
+    <path d="M 50 140 L 140 60 L 230 140 L 140 220 Z" fill="none" stroke="url(#cyanPurple)" stroke-width="2" class="flowing-path"/>
+
+    <!-- Outer Pulsing Ring -->
+    <circle cx="140" cy="140" r="110" fill="none" stroke="#00f2fe" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4" class="animated-ring"/>
+    
+    <!-- Central Shield Graphic -->
+    <path d="M 140 85 L 185 110 V 150 C 185 180 140 200 140 200 C 140 200 95 180 95 150 V 110 Z" fill="none" stroke="url(#neonShield)" stroke-width="3" filter="url(#softGlow)"/>
+    <circle cx="140" cy="140" r="12" fill="#00f2fe" filter="url(#softGlow)"/>
+
+    <!-- Connecting Dynamic Radar Pulse -->
+    <line x1="140" y1="140" x2="220" y2="90" stroke="#00f2fe" stroke-width="2" opacity="0.7"/>
+    <circle cx="220" cy="90" r="5" fill="#00f2fe" filter="url(#softGlow)"/>
+
+    <line x1="140" y1="140" x2="60" y2="190" stroke="#ff0080" stroke-width="2" opacity="0.7"/>
+    <circle cx="60" cy="190" r="5" fill="#ff0080" filter="url(#softGlow)"/>
+  </g>
+
+  <!-- Content Group (Foreground & Fully Readable) -->
+  <g transform="translate(70, 0)">
+    <!-- Category Tag / Pill -->
+    <g transform="translate(0, 72)">
+      <rect width="260" height="32" rx="16" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <circle cx="16" cy="16" r="5" fill="#00f2fe" filter="url(#softGlow)"/>
+      <text x="32" y="21" class="badge-text">🛡️ CLOUD &amp; RUNTIME THREAT DETECTION</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="155" class="title" filter="url(#softGlow)">Awesome Intelligent Threat Detection</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="200" class="subtitle">Curated CNAPP, CSPM, SOC Analytics, eBPF Runtime Guard &amp; Forensic Tooling</text>
+
+    <!-- Highlight Stats / Feature Badges -->
+    <g transform="translate(0, 245)">
+      <!-- Feature Pill 1 -->
+      <rect x="0" y="0" width="160" height="38" rx="8" fill="#0f172a" stroke="#00f2fe" stroke-width="1" opacity="0.9"/>
+      <text x="18" y="24" fill="#e2e8f0" font-family="sans-serif" font-size="13" font-weight="600">⚡ SaaS &amp; Open-Source</text>
+
+      <!-- Feature Pill 2 -->
+      <rect x="175" y="0" width="170" height="38" rx="8" fill="#0f172a" stroke="#7928ca" stroke-width="1" opacity="0.9"/>
+      <text x="193" y="24" fill="#e2e8f0" font-family="sans-serif" font-size="13" font-weight="600">📊 Market &amp; Star Metrics</text>
+
+      <!-- Feature Pill 3 -->
+      <rect x="360" y="0" width="165" height="38" rx="8" fill="#0f172a" stroke="#ff0080" stroke-width="1" opacity="0.9"/>
+      <text x="378" y="24" fill="#e2e8f0" font-family="sans-serif" font-size="13" font-weight="600">🔍 Cloud &amp; K8s Forensics</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect x="0" y="354" width="1200" height="6" fill="url(#cyanPurple)"/>
+</svg>
